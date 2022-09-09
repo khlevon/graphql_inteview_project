@@ -1,0 +1,25 @@
+type Weather {
+  id: ID!
+  city: City!
+
+  temp: Float!
+  feels_like: Float!
+  temp_min: Float!
+  temp_max: Float!
+  pressure: Float!
+  humidity: Float!
+  visibility: Float!
+  wind_speed: Float!
+  wind_deg: Float!
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input WeatherForCitiesInput {
+  cityIds: [ID!]!
+}
+
+type Query {
+  weatherForCities(input: WeatherForCitiesInput!): [Weather]!
+}

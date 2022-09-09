@@ -1,0 +1,20 @@
+type City {
+  id: ID!
+  name: String!
+  countryCode: ID!
+  lat: Float!
+  lon: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Query {
+  cities: [City]!
+  cityById(id: ID!): City!
+  cityByName(name: String!): City!
+}
+
+type Mutation {
+  addCity(name: String!): City!
+  removeCity(name: String!): City!
+}
