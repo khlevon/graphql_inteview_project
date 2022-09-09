@@ -42,22 +42,7 @@ export const addCityResolver: TResolver = async (parent, args, ctx, info) => {
     lon,
   });
 
-  try {
-    const weatherData = await ctx.services.openWeatherMapService.getWeatherByCoordinates(
-      city.lat,
-      city.lon
-    );
-
-    await ctx.repositories.WeatherRepository.create({
-      ...weatherData,
-      city: city,
-    });
-  } catch (e) {
-    logger.error({
-      message: "Error while fetching weather data for city",
-      data: e,
-    });
-  }
+  // TODO: fetch weather data from OpenWeatherMap API for newly added city and create a new Weather object in the database
 
   return city;
 };

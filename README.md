@@ -1,5 +1,12 @@
 # This is a simple project which provides a GraphQL API to add a city into a database and get an hourly weather forecast for it.
 
+# What is your task?
+
+1. You need to setup project in your local environment
+2. You need to read and understand the code
+3. You need to create a new GraphQL type called `Weather` based on the type definitions in `src/app/db/models/weather.ts`
+4. You need to create a new GraphQL query called `weatherForCities` which will get list of city ids and return a list of `Weather` objects
+5. You need to change `addCityResolver`: fetch weather data from OpenWeatherMap API for newly added city and create a new `Weather` object in the database
 
 ## Getting started
 
@@ -37,8 +44,7 @@
    cp .env.example .env.development
    ```
 
-
-4. Run docker services
+4) Run docker services
 
    - For initialize
 
@@ -58,7 +64,7 @@
    docker-compose --env-file ./.env.development stop -d
    ```
 
-5. Run the development server
+5) Run the development server
 
    ```bash
    npm run watch
