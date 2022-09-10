@@ -43,10 +43,16 @@
    - For initialize
 
    ```bash
-   docker-compose --env-file ./.env.development up -d
+   docker-compose --env-file ./.env.development up -d --build
    ```
 
-   - For development
+   - For destroy
+
+   ```bash
+   docker-compose --env-file ./.env.development down
+   ```
+
+   - For development start/stop
 
    ```bash
    docker-compose --env-file ./.env.development start -d
@@ -58,6 +64,11 @@
    docker-compose --env-file ./.env.development stop -d
    ```
 
+  - To see app logs
+
+   ```bash
+   docker-compose --env-file ./.env.development logs -f app
+   ```
 5. Run the development server
 
    ```bash

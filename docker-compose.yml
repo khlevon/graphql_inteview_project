@@ -17,3 +17,25 @@ services:
 
     volumes:
       - ./scripts/initMongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
+
+    networks:
+      - main
+
+  app:
+    container_name: weather_graphql_app
+    command: npm run watch
+    working_dir: /app
+    build:
+      context: .
+      dockerfile: ./scripts/Dockerfile
+    volumes:
+      - .:/app
+      - '/app/node_modules'
+    tty: true
+    ports:
+      - 4000:4000
+    networks:
+      - main
+
+networks:
+  main:
