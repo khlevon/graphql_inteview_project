@@ -64,7 +64,7 @@
    docker-compose --env-file ./.env.development stop -d
    ```
 
-  - To see app logs
+   - To see app logs
 
    ```bash
    docker-compose --env-file ./.env.development logs -f app
